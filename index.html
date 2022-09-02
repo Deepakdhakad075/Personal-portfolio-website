@@ -1314,36 +1314,7 @@ footer .social_icon li a:hover{
    </script>
 
 </body>
-<?php
-if(isset($_POST['name'])){
-$server = "localhost";
-$username = "root";
-$password = "";
-//create a database connection
-$con = mysqli_connect($server, $username, $password);
 
-//Chack for connection success
-if(!$con){
-    die("connection to this database failed due to" . mysqli_connect_error());
-}
-
-
-$name = $_POST['name'];
- $email = $_POST['email'];
- $pass = $_POST['pass'];
- $other = $_POST['other'];
- $sql = "INSERT INTO `my`.`my` (`name`, `email`, `pass`, `other`) VALUES ('$name', '$email', '$pass', '$other');";
- //echo $sql;
-
- if($con->query($sql) == true){
-   // echo "Successfully inserted";
- }
- else{
-     echo "ERROR: $sql <br> $con->error";
- }
- $con->close();
-}
-?>
 
 
 
